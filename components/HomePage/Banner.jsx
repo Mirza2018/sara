@@ -30,7 +30,7 @@ const Banner = () => {
       <div className="md:block hidden md:absolute inset-0 bg-black opacity-30"></div> 
       {/* Text Overlay */}
       <div className="absolute inset-0 flex items-center justify-start left-[8%] md:top-[20%] -top-[18%] z-10">
-        <h1 className="text-white font-inter font-bold  md:text-fluid-2xl text-[30px]  md:leading-normal leading-[1.5]">
+        <h1 className="text-white font-inter font-bold  lg:text-fluid-2xl text-[30px]   md:leading-normal leading-[1.5]">
           YOUR BEST <br /> FRIEND DESERVES <br /> THEIR BEST DAY
         </h1>
       </div>

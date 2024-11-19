@@ -4,6 +4,14 @@ import product from "../../asserts/product.png";
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const Product = () => {
+  const products = [
+    {
+      id: 1,
+      name: "Dog Food",
+      price: "$160.00",
+      image: 'ED',
+    }
+  ]
   return (
     <div className="max-w-[387px] rounded overflow-hidden shadow-xl bg-white">
       {/* Product Image */}

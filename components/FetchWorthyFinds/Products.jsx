@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from './Product';
 import Pagination from '../FriendsPage/Pagination';
+import img1 from "../../asserts/product.png";
 
 const Products = () => {
     return (

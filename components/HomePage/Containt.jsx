@@ -90,7 +90,7 @@ const Containt = () => {
         </div>
 
 
-        <div  className="relative flex items-end md:px-4  sm:pb-16 md:justify-center   md:mx-0 mx-auto">
+        <div  className="relative flex  items-center md:px-4  sm:pb-16 md:justify-center   md:mx-0 mx-auto">
             <div  className="">
                 <Image  className="md:w-screen w-[82vw] rounded-lg shadow-lg 
                 scale-110" objectFit="cover"  src={dog2} alt="" />

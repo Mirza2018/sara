@@ -21,10 +21,10 @@ const HowDoYouPlay = () => {
   };
 
   return (
-    <div className="flex items-center justify-center relative">
+    <div className="flex items-center justify-center relative md:mt-10">
       <video
         ref={videoRef}
-        className="md:w-[59vw] w-[90%] rounded-lg shadow-lg"
+        className="md:w-[80vw] w-[90%] rounded-lg shadow-lg"
         autoPlay
         loop
         muted // Initially muted for autoplay
