@@ -28,9 +28,9 @@ const FeaturedPups = () => {
   return (
     <div className="bg-[#FFFAF5]">
       {/* Hero Section */}
-      <div className="relative w-full md:h-[35vw]  h-[25vh] bg-contain  md:bg-cover" style={{ backgroundImage: 'url(/fpb.png)' }}>
+      <div className="relative w-full md:h-[35vw]  h-[40vh]  bg-cover bg-no-repeat bg-right-top md:-mt-10 mt-16" style={{ backgroundImage: 'url(/fpb.png)' }}>
         <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-          <div className="text-white absolute lg:left-36 md:left-16 lg:top-1/4 md:top-10 bottom-1 text-center ">
+          <div className="text-white absolute lg:left-36 md:left-16 lg:top-1/4 md:top-10 text-center ">
             <h1 className="lg:text-[3.75vw] md:text-[36px] text-[22px] font-bold " >COMMUNITY SUPPORT</h1>
             <p className="md:mt-2 lg:text-[1.25vw] md:text-[16px] text-[9px] md:w-[45vw] w-[70vw] ms-0 md:ms-3">
               Meet your future best friend! We spotlight local shelter dogs waiting for their forever homes.
