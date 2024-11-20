@@ -1,4 +1,4 @@
-import React from 'react';
+"use client"
 import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 import img1 from '../../asserts/fp1.png';
@@ -11,8 +11,22 @@ import img7 from '../../asserts/fp7.png';
 import img8 from '../../asserts/fp8.png';
 import img9 from '../../asserts/fp9.png';
 import { MdOutlineArrowOutward } from 'react-icons/md';
+import { useState } from 'react';
+import DonateNow from './DonateNow/DonateNow';
+import Link from 'next/link';
+import DonateSuccess from './DonateNow/DonateSuccess';
 
 const FeaturedPups = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [id, setId] = useState(null)
+
+  const openModal = (id) =>{
+    setId(id)
+    setIsOpen(true)
+  }
+  const closeModal = () => setIsOpen(false)
+
   const shelters = [
     { id: 1, name: 'ABC Shelter', image: img1 },
     { id: 2, name: 'ABC Shelter', image: img2 },
@@ -24,6 +38,7 @@ const FeaturedPups = () => {
     { id: 8, name: 'ABC Shelter', image: img8 },
     { id: 9, name: 'ABC Shelter', image: img9 },
   ];
+
 
   return (
     <div className="bg-[#FFFAF5]">
@@ -46,9 +61,11 @@ const FeaturedPups = () => {
         <h2 className="lg:text-[2.083vw] text-[2em] text-center font-bold mb-8">Meet our Featured Shelter Pups</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-[100px] gap-x-[24px] mx-[7.8125vw]">
           {shelters.map((shelter) => (
+            // <Link href={`fearured-pups/${shelter?.id}`} key={shelter?.id} className='cursor-pointer'>
             <div
-              key={shelter?.id}
-              className="relative bg-white shadow-lg rounded-lg overflow-hidden   min-h-[74.3321vh] flex flex-col justify-end items-center"
+            onClick={()=>openModal(shelter?.id)}
+            key={shelter?.id} 
+              className="cursor-pointer relative bg-white shadow-lg rounded-lg overflow-hidden   min-h-[74.3321vh] flex flex-col justify-end items-center"
             >
               {/* Image Section with Full Width and Height */}
               <div className="absolute inset-0">
@@ -69,7 +86,10 @@ const FeaturedPups = () => {
                 <span className="lg:text-[2.0833vw] text-[18px] font-semibold">{shelter?.name}</span>
                 <FiExternalLink className="lg:text-[2.0833vw] text-[18px]" />
               </div>
+
             </div>
+            // </Link>
+
           ))}
         </div>
       </div>
@@ -80,12 +100,28 @@ const FeaturedPups = () => {
           Your donation helps give shelter dogs the care and love they need while
           waiting for their forever homes. Every contribution makes a tail wag and a heart hopeful. Click below to make a difference today!
         </p>
-        <button className="md:mt-[50] mt-5 text-white no-underline bg-[#F88D58] hover:bg-black 
+        <button   className="md:mt-[50] mt-5 text-white no-underline bg-[#F88D58] hover:bg-black 
                  xl:px-[48px] xl:py-[20px] lg:px-[38px] lg:py-[16px] md:px-[28px] md:py-[10px] 
                  px-[48px] py-[20px] md:mb-0 mb-4 md:text-fluid-button text-[18px] flex justify-center 
                  items-center gap-[16px] rounded-lg mx-auto">
           Donate Now <MdOutlineArrowOutward />
         </button>
+        {
+isOpen &&
+<div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center  z-50'>
+
+  <DonateNow closeModal={closeModal} setOpen={setOpen}  id={id} />
+</div>
+
+       }
+
+{open && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center  z-50">
+          <DonateSuccess setOpen={setOpen} id={id} />
+        </div>
+      )}
+
+
       </div>
     </div>
   );
