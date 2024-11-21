@@ -2,14 +2,14 @@ import Image from 'next/image';
 import banner from '../../asserts/fw1.png';
 const FetchWorthyFindsBanner = () => {
     return ( 
-<div className="relative md:mt-0 mt-36 flex md:flex-row flex-col items-center justify-around
- bg-[#696969] lg:h-[561px] md:h-[350px] h-full  md:px-[150px] gap-[12]">
+<div className="relative flex md:flex-row flex-col items-center justify-around
+ bg-[#696969] lg:h-[561px] md:h-[350px] h-full  md:px-[150px] gap-[12] xl:mt-[113px] lg:mt-[83px] md:mt-[97px] mt-[72px]">
       {/* Left side image */}
       <div className="h-full lg:w-[512px] md:w-[300px] w-full ">
         <Image
           src={banner} 
           alt="Cozy dog"
-          className="rounded-lg shadow-lg object-cover w-full h-full "
+          className="md:rounded-lg shadow-lg object-cover w-full h-full "
         />
       </div>
 

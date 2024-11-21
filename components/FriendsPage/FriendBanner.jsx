@@ -4,7 +4,7 @@ import banner from '../../asserts/fb1.png'
 
 const FriendBanner = () => {
     return (
-<section  className="relative mt-6 bg-white">
+<section  className="relative  bg-white  w-full overflow-hidden  xl:mt-[113px] lg:mt-[83px] md:mt-[97px] ">
     <div  className=" bg-white">
         <Image  className="w-full h-[60vh]  object-cover " alt="Dog Image" src={banner}  />
     </div>

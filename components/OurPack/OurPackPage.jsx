@@ -1,14 +1,4 @@
-// import React from 'react';
 
-// const OurPackPage = () => {
-//     return (
-//         <div>
-//             hi
-//         </div>
-//     );
-// };
-
-// export default OurPackPage;
 
 import React from 'react';
 import Image from 'next/image';
@@ -19,7 +9,7 @@ import ced from '../../asserts/ced.png'
 
 const OurPackPage = () => {
   return (
-    <div className="bg-gray-100 py-12">
+    <div className="bg-gray-100 py-12 xl:mt-[113px] lg:mt-[83px] md:mt-[97px] mt-[72px]">
       <h1 className="text-center text-4xl font-bold mb-2">Our Pack</h1>
       <p className="text-center text-lg text-gray-600 mb-8">Who we are</p>
 

@@ -8,7 +8,7 @@ const DashboardPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="">
+    <div className=" xl:mt-[130px] lg:mt-[113px] md:mt-[100px] mt-[80px]">
       <div className="flex ">
             <DashboardNav/>
             <div className="flex-1">

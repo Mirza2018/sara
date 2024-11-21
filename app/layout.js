@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} overflow-x-hidden bg-[#FFFAF5]`}>
         {/* Fixed Navbar */}
-        <div className="md:mb-[120px] ">
+        <div className=" ">
         <Navbar />
         </div>
           {children}

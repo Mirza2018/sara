@@ -30,7 +30,7 @@ const DonateSuccess = (params) => {
   );
 
   return (
-    <div className="bg-white/30 w-[60vw] h-[90vh]  backdrop-blur-xl rounded-[50px] border-2 border-white  flex flex-col justify-center">
+    <div className="bg-white/30 w-[60vw] h-[90vh]  bg-white/20 backdrop-blur-2xl brightness-105% contrast-90% rounded-[50px] border border-white/50 shadow-xl flex flex-col justify-center">
       <button
         className="absolute right-10 top-10 font-bold text-2xl text-white"
         onClick={() => setOpen(false)}

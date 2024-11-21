@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -49,13 +50,13 @@ const Footer = () => {
 
         {/* Navigation Links (Hidden on mobile, shown on larger screens) */}
                 <div className="hidden lg:flex space-x-4 my-6">
-                <a href="#" className="text-white hover:text-gray-400">Home</a>
-                <a href="#" className="text-white hover:text-gray-400">Friends</a>
-                <a href="#" className="text-white hover:text-gray-400">Product List</a>
-                <a href="#" className="text-white hover:text-gray-400">Featured Pups</a>
-                <a href="#" className="text-white hover:text-gray-400">Our Pack</a>
-                <a href="#" className="text-white hover:text-gray-400">Contact Us</a>
-                <a href="#" className="text-white hover:text-gray-400">Disclaimer</a>
+                <Link href="/" className="text-white hover:text-gray-400">Home</Link>
+                <Link href="/friends" className="text-white hover:text-gray-400">Friends</Link>
+                <Link href="/woof-mail" className="text-white hover:text-gray-400">Woof Mail</Link>
+                <Link href="/fetch-worthy-finds" className="text-white hover:text-gray-400">Fetch-Worthy Finds</Link>
+                <Link href="/fearured-pups" className="text-white hover:text-gray-400">Featured Pups</Link>
+                <Link href="/our-pack" className="text-white hover:text-gray-400">Our Pack</Link>
+                <Link href="/contract-us" className="text-white hover:text-gray-400">Contact us</Link>
                 </div>
 
                 <hr className='my-4 md:block hidden' />
