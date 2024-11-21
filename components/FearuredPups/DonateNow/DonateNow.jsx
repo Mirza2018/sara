@@ -45,7 +45,7 @@ const DonateNow = (params) => {
   return (
     <div className="xl:w-[60vw] w-[90vw] lg:h-[90vh] bg-white/30 backdrop-blur-xl rounded-[50px] border-2 border-white  p-10 flex justify-center items-center flex-col md:mt-0 mt-[100px]">
       <button
-        className="absolute right-10 top-10 font-bold text-2xl text-white"
+        className="absolute  lg:top-10  md:top-0 top-2 md:right-10 right-8 font-bold text-2xl text-white"
         onClick={closeModal}
       >
         X

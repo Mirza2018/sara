@@ -34,9 +34,9 @@ const Containt = () => {
                 and discover dogs near you. Match your dogs play style with others for fun 
                 playdates and lasting friendships. 
                 </p>
-                <button className="md:mt-[46.5px] mt-5 text-white no-underline  bg-[#F88D58] hover:bg-black 
-                 xl:px-[48px] xl:py-[20px] lg:px-[38px] lg:py-[16px] md:px-[28px] md:py-[10px] px-[48px]  py-[20px] md:mb-0 mb-4 md:text-fluid-button text-[18px] flex justify-center 
-                 items-center gap-[16px] rounded-lg">
+                <button className="md:mt-[46.5px] mt-5  text-white no-underline  bg-[#F88D58] hover:bg-black 
+                 xl:px-[48px] xl:py-[20px] lg:px-[38px] lg:py-[16px] md:px-[28px] md:py-[10px] px-[48px]  py-[20px] md:mb-0 mb-6 md:text-fluid-button text-[18px] flex justify-center 
+                 items-center gap-[16px] rounded-lg ">
                                 Get Started <MdOutlineArrowOutward /></button>
                                 </div>
                             </div>

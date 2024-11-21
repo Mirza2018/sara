@@ -72,7 +72,9 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={`${item?.path}`}
-                  className="block px-3  rounded-md text-base font-medium text-black hover:bg-gray-700 hover:text-white focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out"
+                  className={`${
+                    pathName == item.path ? "text-[#F88D58]" : ""
+                  } block px-3  rounded-md text-base font-medium   hover:text-[#F88D58] transition duration-150 ease-in-out`}
                   aria-label={item.name}
                 >
                   {item.name}

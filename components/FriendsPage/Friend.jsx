@@ -156,7 +156,7 @@ const Friend = ({ petPartner, index }) => {
         <div className="  fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           
           <div className="bg-[#FFFAF5] relative  lg:py-[100px]  rounded-lg shadow-xl lg:w-[70vw]">
-      <div className='absolute  top-10 right-10'>
+      <div className='absolute  lg:top-10 lg:right-10 top-2 md:right-4 right-3 z-50'>
       <button
                 onClick={closeModal}
                 className=" text-gray-400 hover:text-gray-600"
