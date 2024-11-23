@@ -14,7 +14,7 @@ const Navbar = () => {
   const pathName = usePathname();
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(prev=>!prev);
   };
 
   useEffect(() => {
@@ -39,9 +39,9 @@ const Navbar = () => {
     { name: "Friends", path: "/friends" },
     { name: "Woof Mail", path: "/" },
     { name: "Fetch-Worthy Finds", path: "/fetch-worthy-finds" },
-    { name: "Featured Pups", path: "/fearured-pups" },
+    { name: "Featured Pups", path: "/featured-pups" },
     { name: "Our Pack", path: "/our-pack" },
-    { name: "Contact us", path: "/contract-us" },
+    { name: "Contact us", path: "/contact-us" },
     { name: "Dashboard", path: "/dashboard" },
   ];
 

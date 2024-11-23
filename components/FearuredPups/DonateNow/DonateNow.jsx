@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import img1 from "../../../asserts/fp1.png";
 import img2 from "../../../asserts/fp2.png";
 import img3 from "../../../asserts/fp3.png";
@@ -15,13 +15,34 @@ import DonateSuccess from "./DonateSuccess";
 const DonateNow = (params) => {
   const [donationAmount, setDonationAmount] = useState("160.00");
   // console.log(params.closeModal);
-  const { closeModal ,setOpen } = params;
+  const { closeModal ,setOpen,setIsOpen,isOpen } = params;
 
   const handleButtonClick =()=>{
     closeModal();
     setOpen(true);
    console.log(open);  
   }
+
+  const containerRef = useRef(null); // Ref for the dropdown
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, setIsOpen]);
+
+
+
  
   
 
@@ -43,7 +64,7 @@ const DonateNow = (params) => {
 
 
   return (
-    <div className="xl:w-[60vw] w-[90vw] lg:h-[90vh] bg-white/30 backdrop-blur-xl rounded-[50px] border-2 border-white  p-10 flex justify-center items-center flex-col md:mt-0 mt-[100px]">
+    <div ref={containerRef} className="xl:w-[60vw] w-[90vw] lg:h-[90vh] bg-white/30 backdrop-blur-xl rounded-[50px] border-2 border-white  p-10 flex justify-center items-center flex-col md:mt-0 mt-[100px]">
       <button
         className="absolute  lg:top-10  md:top-0 top-2 md:right-10 right-8 font-bold text-2xl text-white"
         onClick={closeModal}

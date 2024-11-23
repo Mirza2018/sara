@@ -110,13 +110,13 @@ const FeaturedPups = () => {
 isOpen &&
 <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center  z-50'>
 
-  <DonateNow closeModal={closeModal} setOpen={setOpen}  id={id} />
+  <DonateNow closeModal={closeModal} setOpen={setOpen} setIsOpen={setIsOpen} isOpen={isOpen}  id={id} />
 </div>
        }
 
 {open && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center  z-50">
-          <DonateSuccess setOpen={setOpen} id={id} />
+          <DonateSuccess setOpen={setOpen} open={open} id={id} />
         </div>
       )}
 

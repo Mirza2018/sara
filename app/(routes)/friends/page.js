@@ -3,7 +3,7 @@ import React from 'react';
 
 const Friendspage = () => {
     return (
-        <div>
+        <div className=' '>
             <FriendsPage/>
         </div>
     );

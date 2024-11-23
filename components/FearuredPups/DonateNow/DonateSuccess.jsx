@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useRef } from "react";
 import img1 from "../../../asserts/fp1.png";
 import img2 from "../../../asserts/fp2.png";
 import img3 from "../../../asserts/fp3.png";
@@ -13,7 +14,32 @@ import Image from "next/image";
 import Link from "next/link";
 
 const DonateSuccess = (params) => {
-  const { setOpen, id } = params;
+  const { setOpen,open, id } = params;
+    
+  const containerRef = useRef(null); // Ref for the dropdown
+
+
+useEffect(() => {
+const handleClickOutside = (event) => {
+  if (
+    open &&
+    containerRef.current &&
+    !containerRef.current.contains(event.target)
+  ) {
+    setOpen(false);
+  }
+};
+
+document.addEventListener("mousedown", handleClickOutside);
+return () => {
+  document.removeEventListener("mousedown", handleClickOutside);
+};
+}, [setOpen,open]);
+
+
+
+
+
   const shelters = [
     { id: 1, name: "ABC Shelter", image: img1 },
     { id: 2, name: "ABC Shelter", image: img2 },
@@ -30,7 +56,7 @@ const DonateSuccess = (params) => {
   );
 
   return (
-    <div className="bg-white/30 w-[60vw] h-[90vh]  bg-white/20 backdrop-blur-2xl brightness-105% contrast-90% rounded-[50px] border border-white/50 shadow-xl flex flex-col justify-center">
+    <div ref={containerRef} className="bg-white/30 w-[60vw] h-[90vh]  backdrop-blur-2xl brightness-105% contrast-90% rounded-[50px] border border-white/50 shadow-xl flex flex-col justify-center">
       <button
         className="absolute right-10 top-10 font-bold text-2xl text-white"
         onClick={() => setOpen(false)}
@@ -60,7 +86,7 @@ const DonateSuccess = (params) => {
       <p className="text-[16px] text-white">Thank You For Your Donation</p>
 
       <div className="flex justify-center my-5 ">
-        <Link href={"/fearured-pups"} onClick={() => setOpen(false)}>
+        <Link href={"/featured-pups"} onClick={() => setOpen(false)}>
         
       <button
               

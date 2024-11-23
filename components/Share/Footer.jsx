@@ -54,9 +54,9 @@ const Footer = () => {
                 <Link href="/friends" className="text-white hover:text-gray-400">Friends</Link>
                 <Link href="/woof-mail" className="text-white hover:text-gray-400">Woof Mail</Link>
                 <Link href="/fetch-worthy-finds" className="text-white hover:text-gray-400">Fetch-Worthy Finds</Link>
-                <Link href="/fearured-pups" className="text-white hover:text-gray-400">Featured Pups</Link>
+                <Link href="/featured-pups" className="text-white hover:text-gray-400">Featured Pups</Link>
                 <Link href="/our-pack" className="text-white hover:text-gray-400">Our Pack</Link>
-                <Link href="/contract-us" className="text-white hover:text-gray-400">Contact us</Link>
+                <Link href="/contact-us" className="text-white hover:text-gray-400">Contact us</Link>
                 </div>
 
                 <hr className='my-4 md:block hidden' />

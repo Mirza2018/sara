@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { IoIosHeart } from "react-icons/io";
 import { MdOutlineArrowOutward } from "react-icons/md";
@@ -16,10 +16,35 @@ const mypetInfo = {
 };
 
 const Friend = ({ petPartner, index }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true)
-  const closeModal = () => setIsOpen(false)
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
+  const containerRef = useRef(null); // Ref for the dropdown
+
+  // Close the dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
+
+
+  
+
   return (
     <div
       className="grid md:grid-cols-3 bg-white 
@@ -105,7 +130,8 @@ const Friend = ({ petPartner, index }) => {
                     Message Me <MdOutlineArrowOutward />
                 </button> */}
 
-        <button onClick={openModal}
+        <button
+          onClick={openModal}
           className=" text-white no-underline  bg-[#F88D58] hover:bg-black 
                 xl:px-[48px] xl:py-[20px] lg:px-[38px] lg:py-[16px] md:px-[28px] md:py-[10px] px-[48px]  py-[20px] md:mb-0 mb-4 lg:text-fluid-button text-[18px] flex justify-center 
                  items-center md:gap-[16px] gap-[4px] rounded-lg  flex-shrink-0"
@@ -114,7 +140,7 @@ const Friend = ({ petPartner, index }) => {
           <MdOutlineArrowOutward />
         </button>
       </div>
-      <Link  href={`/friends/${petPartner.id}`} >
+      <Link href={`/friends/${petPartner.id}`}>
         <div className="text-center flex justify-center items-center flex-col">
           <div
             className="
@@ -151,45 +177,46 @@ const Friend = ({ petPartner, index }) => {
         </div>
       </Link>
 
-
       {isOpen && (
         <div className="  fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          
-          <div className="bg-[#FFFAF5] relative  lg:py-[100px]  rounded-lg shadow-xl lg:w-[70vw]">
-      <div className='absolute  lg:top-10 lg:right-10 top-2 md:right-4 right-3 z-50'>
-      <button
+          <div
+            ref={containerRef}
+            className="bg-[#FFFAF5] relative  lg:py-[100px]  rounded-lg shadow-xl lg:w-[70vw]"
+          >
+            <div className="absolute  lg:top-10 lg:right-10 top-2 md:right-4 right-3 z-50">
+              <button
                 onClick={closeModal}
-                className=" text-gray-400 hover:text-gray-600"
+                className=" text-gray-400 hover:text-gray-600 text-2xl "
               >
-                X 
-                <span className="sr-only">Close</span>
+                X<span className="sr-only">Close</span>
               </button>
-      </div>
+            </div>
             <div className="relative p-6 lg:max-w-4xl mx-auto ">
-
-              <h2 className="lg:text-[40px] font-semibold text-center mb-4  ">Disclaimer</h2>
+              <h2 className="lg:text-[40px] font-semibold text-center mb-4  ">
+                Disclaimer
+              </h2>
               <p className="lg:text-[22px] text-sm text-gray-600 text-justify mb-6 leading-normal  mx-auto">
-                Woof Spot is designed to help dog owners connect with others in their
-                community for activities like walks, hikes, and playdates. While we
-                encourage positive interactions, it is important to use caution when
-                meeting new people and dogs. Woof Spot does not vet users or guarantee
-                the safety, behavior,or reliability of any individuals or their pets.
-                By using our platform, you agree that Woof Spot is not responsible or
-                liable for any negative experiences, injuries, or disputes that may
-                arise from interactions between users. Always prioritize safety and
-                good judgment when arranging meetups.
+                Woof Spot is designed to help dog owners connect with others in
+                their community for activities like walks, hikes, and playdates.
+                While we encourage positive interactions, it is important to use
+                caution when meeting new people and dogs. Woof Spot does not vet
+                users or guarantee the safety, behavior,or reliability of any
+                individuals or their pets. By using our platform, you agree that
+                Woof Spot is not responsible or liable for any negative
+                experiences, injuries, or disputes that may arise from
+                interactions between users. Always prioritize safety and good
+                judgment when arranging meetups.
               </p>
-              <div className='flex justify-end'>
-                             <button
-          className=" text-white no-underline  bg-[#F88D58] hover:bg-black 
+              <div className="flex justify-end">
+                <button
+                  className=" text-white no-underline  bg-[#F88D58] hover:bg-black 
                 xl:px-[48px] xl:py-[20px] lg:px-[38px] lg:py-[16px] md:px-[28px] md:py-[10px] px-[10px]  py-[8px] md:mb-0 mb-4 lg:text-fluid-button text-[18px] flex justify-center 
                  items-center md:gap-[16px] gap-[4px] rounded-lg  flex-shrink-0  "
-        >
-          Message Me
-          <MdOutlineArrowOutward />
-        </button> 
+                >
+                  Message Me
+                  <MdOutlineArrowOutward />
+                </button>
               </div>
-
             </div>
           </div>
         </div>
