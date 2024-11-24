@@ -72,8 +72,8 @@ const Containt = () => {
                 At Woof Spot, we believe that every dog is unique, with their own play styles, 
                 social needs, and personalities. Our mission is to connect dogs and their owners, 
                 fostering friendships that make life richer for everyone involved—both two-legged 
-                and four-legged. Whether it's finding a playmate for your energetic pup, or pal that
-                 matches your pup's playstyle, organizing a neighborhood dog walk, or simply meeting 
+                and four-legged. Whether it&apos;s finding a playmate for your energetic pup, or pal that
+                 matches your pup&apos;s playstyle, organizing a neighborhood dog walk, or simply meeting 
                  other dog lovers in your area, Woof Spot is here to help you and your dog make the most 
                  of your community.
                 </p>

@@ -623,7 +623,7 @@ const WoofMailPage = () => {
                   <div className=" absolute bottom-0 flex justify-center items-center w-full p-4">
                     <div className="w-full rounded-full bg-white border  px-4 py-2 flex items-center space-x-4">
                       {/* Emoji Icon */}
-                      <BsEmojiSmile className="cursor-pointer text-xl text-gray-500" />
+                      <BsEmojiSmile className="cursor-pointer text-xl text-yellow-600" />
 
                       {/* Input Field */}
                       <Input

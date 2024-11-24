@@ -127,31 +127,31 @@ const SingleFriend = ({id}) => {
   
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-            <Image src={svg} className='w-5'/>
+            <Image alt='friend' src={svg} className='w-5'/>
               <span className="font-medium">Spayed/Neutered:</span>
               <span className="text-[#F88D58]">{pet?.preferences.spayedNeutered}</span>
             </div>
   
             <div className="flex items-center gap-3">
-            <Image src={svg} className='w-5'/>
+            <Image alt='friend'  src={svg} className='w-5'/>
               <span className="font-medium">How do you play:</span>
               <span className="text-[#F88D58]">{pet?.preferences.playStyle}</span>
             </div>
   
             <div className="flex items-center gap-3">
-            <Image src={svg} className='w-5'/>
+            <Image  alt='friend'  src={svg} className='w-5'/>
               <span className="font-medium">Do you like a crowd?:</span>
               <span className="text-[#F88D58]">{pet?.preferences.crowdPreference}</span>
             </div>
   
             <div className="flex items-center gap-3">
-            <Image src={svg} className='w-5'/>
+            <Image  alt='friend'  src={svg} className='w-5'/>
               <span className="font-medium">Play/Size preferences:</span>
               <span className="text-[#F88D58]"> {pet?.preferences.sizePreference}</span>
             </div>
   
             <div className="flex items-center gap-3">
-            <Image src={svg} className='w-5'/>
+            <Image  alt='friend' src={svg} className='w-5'/>
               <span className="font-medium">Location preferences:</span>
               <span className="text-[#F88D58]"> {pet?.preferences.locationPreference}</span>
             </div>
