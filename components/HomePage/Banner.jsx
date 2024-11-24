@@ -4,7 +4,7 @@ import logo from "../../asserts/banner.png";
 
 const Banner = () => {
   return (
-    <div className="relative md:h-[90vh] w-full overflow-hidden  xl:mt-[113px] lg:mt-[83px] md:mt-[97px] -mt-20">
+    <div className="relative md:h-[90vh] w-full overflow-hidden ">
       {/* Background Image */}
       <div className="absolute  w-full h-full md:block hidden"> {/* Adjust top to move up */}
         <Image

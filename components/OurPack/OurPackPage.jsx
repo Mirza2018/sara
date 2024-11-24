@@ -9,7 +9,7 @@ import ced from '../../asserts/ced.png'
 
 const OurPackPage = () => {
   return (
-    <div className="bg-[#FFFAF5] py-12 xl:mt-[113px] lg:mt-[83px] md:mt-[97px] mt-[72px]">
+    <div className="bg-[#FFFAF5] py-12 ">
       <h1 className="text-center text-[62px] font-bold mb-2 text-[#302F51]">Our Pack</h1>
       <p className="text-center text-[40px] text-[#302F51] mb-8">Who we are</p>
 

@@ -14,7 +14,7 @@ const Navbar = () => {
   const pathName = usePathname();
 
   const toggleMenu = () => {
-    setIsOpen(prev=>!prev);
+    setIsOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Navbar = () => {
 
   return (
     // Navbar items Section
-    <nav className="bg-[#FFFAF5] md:py-4 py-1 px-2  shadow  fixed top-0 w-full z-50">
+    <nav className="bg-[#FFFAF5] md:py-4 py-1 px-2  shadow  w-full z-50">
       <div className="container mx-auto flex justify-between items-center lg:flex-row flex-row-reverse">
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden block text-right relative " ref={menuRef}>
@@ -111,9 +111,11 @@ const Navbar = () => {
         </div>
 
         {/* Profile Icon */}
-        <div className="relative lg:block hidden">
-          <IoPersonCircleOutline className="text-5xl" />
-        </div>
+        <Link href="/sign-up">
+          <div className="relative lg:block hidden cursor-pointer">
+            <IoPersonCircleOutline className="text-5xl" />
+          </div>
+        </Link>
       </div>
     </nav>
   );

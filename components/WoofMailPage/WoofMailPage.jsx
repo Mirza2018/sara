@@ -454,7 +454,7 @@ const WoofMailPage = () => {
   }, []);
 
   return (
-    <div className="mt-[100px]">
+    <div className="">
       <Layout
         className="!bg-[#FFFAF5] "
         style={{ height: "90vh", boxShadow: "0px 0px 2px 1px #00000040" }}

@@ -41,7 +41,7 @@ const FeaturedPups = () => {
 
 
   return (
-    <div className="bg-[#FFFAF5] xl:mt-[153px] lg:mt-[123px] md:mt-[137px] mt-[73px]">
+    <div className="bg-[#FFFAF5] ">
       {/* Hero Section */}
       <div className="relative w-full md:h-[35vw]  h-[40vh]  bg-cover bg-no-repeat bg-right-top md:-mt-10 mt-16" style={{ backgroundImage: 'url(/fpb.png)' }}>
         <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">

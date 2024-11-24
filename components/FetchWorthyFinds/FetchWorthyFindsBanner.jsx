@@ -3,7 +3,7 @@ import banner from '../../asserts/fw1.png';
 const FetchWorthyFindsBanner = () => {
     return ( 
 <div className="relative flex md:flex-row flex-col items-center justify-around
- bg-[#696969] lg:h-[561px] md:h-[350px] h-full  md:px-[150px] gap-[12] xl:mt-[113px] lg:mt-[83px] md:mt-[97px] mt-[72px]">
+ bg-[#696969] lg:h-[561px] md:h-[350px] h-full  md:px-[150px] gap-[12] ">
       {/* Left side image */}
       <div className="h-full lg:w-[512px] md:w-[300px] w-full ">
         <Image
