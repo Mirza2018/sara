@@ -1,8 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Layout, Menu, Card, Input, ConfigProvider, Typography } from "antd";
 import { BarsOutlined, SearchOutlined } from "@ant-design/icons";
 import profileImage from "../../asserts/ced.png";
+import userImage from "./asserts/user.svg";
+import groupImage from "./asserts/group.svg";
 import { GoDeviceCameraVideo } from "react-icons/go";
 import { PiImagesThin } from "react-icons/pi";
 import { LuPhone } from "react-icons/lu";
@@ -10,6 +12,8 @@ import { CiMenuKebab } from "react-icons/ci";
 import { BsEmojiSmile, BsImage, BsPaperclip } from "react-icons/bs";
 import Image from "next/image";
 import { FaBars, FaCross, FaTelegramPlane } from "react-icons/fa";
+import { FaCirclePlus } from "react-icons/fa6";
+
 import { RxCross2 } from "react-icons/rx";
 
 const { Header, Content, Sider } = Layout;
@@ -423,6 +427,24 @@ const WoofMailPage = () => {
   const [selectedConversation, setSelectedConversation] = useState(null);
   const [collapsed, setCollapsed] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef(null);
+  const toggleMenu = () => {
+    setOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (open && menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   const handleConversationSelect = (conversation) => {
     setSelectedConversation(conversation);
@@ -488,14 +510,47 @@ const WoofMailPage = () => {
               trigger={null}
               collapsible
               collapsed={collapsed}
-              className={`!bg-[#FFFAF5] m-2 overflow-y-auto   duration-200 ${
+              className={`!bg-[#FFFAF5] m-2   duration-200 ${
                 isOpen ? "!absolute top-0 left-0 z-30" : ""
               }`}
             >
-              <div className="sticky top-0 z-20 !bg-[#FFFAF5]  py-4 mb-3 ">
-                <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-secondary-color font-bold mt-3">
+              <div className="sticky top-0 z-20 !bg-[#FFFAF5]    py-5 mb-3 ">
+                <div className=" flex justify-between items-center pe-4  text-base sm:text-xl md:text-2xl lg:text-3xl text-secondary-color font-bold mt-3">
                   Messages
-                </p>
+                  <div className="relative">
+                    <FaCirclePlus
+                      onClick={toggleMenu}
+                      className="select-none cursor-pointer text-[#F88D58] text-4xl"
+                    />
+                    {open && (
+                      <div
+                        ref={menuRef}
+                        className="bg-[#F3F5FB] absolute top-9 rounded z-50 w-44 p-1"
+                      >
+                        <div className="flex gap-2">
+                          <Image
+                            alt="profileImage"
+                            src={userImage}
+                            className=""
+                          />
+                          <p className="text-[#302F51] text-[20px] font-bold">
+                            Add New
+                          </p>
+                        </div>
+                        <div className="flex gap-2 whitespace-nowrap">
+                          <Image
+                            alt="profileImage"
+                            src={groupImage}
+                            className=""
+                          />
+                          <p className="text-[#302F51] text-[20px] font-bold">
+                            Create Group
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 <Input
                   placeholder="Search Conversations"
                   prefix={<SearchOutlined />}
@@ -503,8 +558,8 @@ const WoofMailPage = () => {
                   onChange={handleSearch}
                 />
               </div>
-              <div className="md:h-full h-fit ">
-                <Menu mode="vertical" className=" text-gray-300 ">
+              <div className="md:h-full h-fit !overflow-y-auto">
+                <Menu mode="vertical" className=" text-gray-300  ">
                   {filteredConversations.map((conversation) => (
                     <Menu.Item
                       key={conversation.id}
@@ -568,7 +623,7 @@ const WoofMailPage = () => {
                 </div>
               </Header>
 
-              <Content className="bg-white flex flex-col gap-5 rounded-none relative">
+              <Content className="bg-white flex flex-col gap-5 rounded-none relative ">
                 {selectedConversation ? (
                   <div className="h-full flex flex-col justify-end">
                     <Card className="  mb-12 overflow-y-auto border-none ">

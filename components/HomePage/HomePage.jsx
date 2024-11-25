@@ -5,9 +5,14 @@ import Banner from './Banner';
 
 const HomePage = () => {
     return (
-        <div>
-            <Banner/>
+        <div >
+            <div className='sticky top-0 '>
+
+            <Banner />
+            </div >
+            <div className="">
             <Containt/>
+            </div>
         </div>
     );
 };

@@ -88,7 +88,7 @@ const Friends = () => {
   ];
   return (
     <div className="bg-[#FFFAF5]">
-      <h1 className="  text-center font-bold my-[50px] xl:text-[96px] text-fluid-2xl-3 text-[#302F51]">
+      <h1 style={{fontSize:"clamp(16px, 2vw + 1rem ,36px)"}}  className="  text-center font-bold my-[50px]  text-[#302F51]">
         FRIENDS NEAR YOU
       </h1>
 {

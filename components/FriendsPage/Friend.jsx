@@ -63,27 +63,24 @@ const Friend = ({ petPartner, index }) => {
                     sm:w-[240px] sm:h-[240px]
                     md:w-[280px] md:h-[280px]
                     lg:w-[320px] lg:h-[320px]
-                    xl:w-[384px] xl:h-[384px]
                 "
         >
           <Image
             alt={mypetInfo?.name}
             src={mypetInfo?.img}
-            width={384}
-            height={384}
             objectFit="cover" /* Cover the container */
-            className="rounded-full" /* Ensures circular shape */
+            className="rounded-full " /* Ensures circular shape */
           />
         </div>
 
         {/* Profile Information */}
-        <p className="text-fluid-lg-title-1 font-semibold text-[#302F51]">
+        <p style={{fontSize:"clamp(14px, 3vw + 1rem ,30px)"}}  className=" font-semibold text-[#302F51]">
           {mypetInfo?.name}
         </p>
-        <p className="text-fluid-lg-title-1 font-semibold text-[#302F51]">
+        <p style={{fontSize:"clamp(14px, 3vw + 1rem ,30px)"}}  className=" font-semibold text-[#302F51]">
           Age: {mypetInfo?.age}
         </p>
-        <p className="text-fluid-lg-title-1 font-semibold flex justify-center items-center gap-2 text-[#302F51]">
+        <p style={{fontSize:"clamp(14px, 3vw + 1rem ,30px)"}}  className=" font-semibold flex justify-center items-center gap-2 text-[#302F51]">
           <PiMapPinAreaFill className="text-[#F88D58]" /> {mypetInfo?.location}
         </p>
       </div>
@@ -153,7 +150,6 @@ const Friend = ({ petPartner, index }) => {
                           sm:w-[240px] sm:h-[240px]
                           md:w-[280px] md:h-[280px]
                           lg:w-[320px] lg:h-[320px]
-                          xl:w-[384px] xl:h-[384px]
                       "
           >
             <Image
@@ -164,13 +160,13 @@ const Friend = ({ petPartner, index }) => {
               className="rounded-full" /* Ensures circular shape */
             />
           </div>
-          <p className="text-fluid-lg-title-1 font-semibold text-[#302F51]">
+          <p  style={{fontSize:"clamp(14px, 3vw + 1rem ,30px)"}}   className=" font-semibold text-[#302F51]">
             {petPartner?.name}
           </p>
-          <p className="text-fluid-lg-title-1 font-semibold text-[#302F51]">
+          <p  style={{fontSize:"clamp(14px, 3vw + 1rem ,30px)"}}   className="font-semibold text-[#302F51]">
             Age: {petPartner?.age}
           </p>
-          <p className="text-fluid-lg-title-1 font-semibold flex justify-center items-center gap-2 text-[#302F51]">
+          <p  style={{fontSize:"clamp(14px, 3vw + 1rem ,30px)"}}   className=" font-semibold flex justify-center items-center gap-2 text-[#302F51]">
             <PiMapPinAreaFill className="text-[#F88D58]" />{" "}
             {petPartner?.location}
           </p>

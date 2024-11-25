@@ -1,27 +1,23 @@
 import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
-import product from "../../asserts/product.png";
+import productImg from "../../asserts/product.png";
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
-const Product = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Dog Food",
-      price: "$160.00",
-      image: 'ED',
-    }
-  ]
+const Product = ({product}) => {
+
+  const {name,price ,} = product;
+
+
   return (
     <div className="max-w-[387px] rounded overflow-hidden shadow-xl bg-white">
       {/* Product Image */}
       <div className="relative">
         <Image
-          src={product} // Replace with your actual image path
+          src={productImg} // Replace with your actual image path
           alt="Dog Food"
-          width={400}
-          height={500}
-          className="object-cover"
+          width={0}
+          height={0}
+          className="object-cover "
         />
 
         {/* Black overlay on the left side */}
@@ -29,8 +25,8 @@ const Product = () => {
 
         {/* Text and Price over the image */}
         <div className="absolute bottom-0 left-0 m-4 text-white z-10">
-          <h3 className="text-[40px] font-bold">Dog Food</h3>
-          <p className="text-[24px]">$160.00</p>
+          <h3 className="text-[40px] font-bold">{name}</h3>
+          <p className="text-[24px]">${price.toFixed(2)	}</p>
         </div>
 
         {/* External Link Icon */}

@@ -55,15 +55,15 @@ const TeamMemberCard = ({ name, title, description, email, imageSrc, socialLink,
 
         {/* Image */}
         <div className=" rounded-lg overflow-hidden mb-4 md:mb-0 md:mr-6  h-full  flex-1  flex justify-center">
-          <Image src={imageSrc} alt={name} className=" aspect-square object-cover rounded-xl" />
+          <Image src={imageSrc} alt={name} className="p-10 aspect-square object-cover rounded-xl" />
         </div>
   
         {/* Info */}
         <div className="text-center md:w-1/2 ">
-          <h2 className="lg:text-[62px] text-[40px] font-bold text-[#302F51]">{name}</h2>
-          <p className="lg:text-[40px] text-[32px] text-[#656565]">{title}</p>
-          <p className="mt-2 lg:text-[30px]  font-bold text-[#656565]">{description}</p>
-          <p className="mt-2 lg:text-[24px] text-sm font-semibold">{email}</p>
+          <h2 className="text-[38px] font-bold text-[#302F51]">{name}</h2>
+          <p className="text-[16px] text-[#656565]">{title}</p>
+          <p className="mt-2 text-[16px] font-bold text-[#656565]">{description}</p>
+          <p className="mt-2 text-[16px]  font-semibold">{email}</p>
   
           {/* Social Media Icon */}
           <div className="mt-4 ">
