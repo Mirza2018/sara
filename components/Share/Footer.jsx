@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <nav className="bg-[#302F51] p-4">
+    <nav className="bg-[#302F51] p-4 z-50">
       {/* <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center"> */}
       <div className="container mx-auto ">
         {/* Logo */}
