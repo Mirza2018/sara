@@ -17,7 +17,7 @@ import Image from 'next/image';
 
 const ContractPage = () => {
   return (
-    <div className="bg-[#f8f4ef] ">
+    <div className="bg-[#FFFAF5] my-10">
       <div className="container mx-auto px-4">
         {/* Heading Section */}
         <div className="text-center mb-8">

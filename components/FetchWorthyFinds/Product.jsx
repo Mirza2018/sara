@@ -17,7 +17,7 @@ const Product = ({product}) => {
           alt="Dog Food"
           width={0}
           height={0}
-          className="object-cover "
+          className="object-cover w-64"
         />
 
         {/* Black overlay on the left side */}
@@ -25,13 +25,13 @@ const Product = ({product}) => {
 
         {/* Text and Price over the image */}
         <div className="absolute bottom-0 left-0 m-4 text-white z-10">
-          <h3 className="text-[40px] font-bold">{name}</h3>
-          <p className="text-[24px]">${price.toFixed(2)	}</p>
+          <h3 className="text-[32px] font-bold">{name}</h3>
+          <p className="text-[20px]">${price.toFixed(2)	}</p>
         </div>
 
         {/* External Link Icon */}
         <div className="absolute bottom-0 right-0 m-4 p-2  rounded-full  z-10">
-        <FaExternalLinkAlt className="text-white text-3xl"  />
+        <FaExternalLinkAlt className="text-white text-2xl"  />
         </div>
       </div>
     </div>

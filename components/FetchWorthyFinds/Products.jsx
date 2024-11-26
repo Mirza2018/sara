@@ -131,7 +131,7 @@ const Products = () => {
            <div className="ProductList text-center text-[#302f51] text-[40px] font-bold md:mb-[52px]">Product List</div>
 
 
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 ">
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-10 ">
         {products.map((product) => <Product key={product.id} product={product} />)}
 
      

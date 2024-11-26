@@ -15,6 +15,8 @@ import { FaBars, FaCross, FaTelegramPlane } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
 
 import { RxCross2 } from "react-icons/rx";
+import AddNewChat from "./AddNewChat";
+import CreateGroup from "./CreateGroup";
 
 const { Header, Content, Sider } = Layout;
 
@@ -428,6 +430,12 @@ const WoofMailPage = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [open, setOpen] = useState(false);
+  const [showAddUserModal, setShowAddUserModal] = useState(false);
+  const [showAddGroupModal, setShowAddGroupModal] = useState(false);
+
+  const toggleUserModal = () => setShowAddUserModal((prev) => !prev);
+  const toggleGroupModal = () => setShowAddGroupModal((prev) => !prev);
+
   const menuRef = useRef(null);
   const toggleMenu = () => {
     setOpen((prev) => !prev);
@@ -517,23 +525,23 @@ const WoofMailPage = () => {
               <div className="sticky top-0 z-20 !bg-[#FFFAF5]    py-5 mb-3 ">
                 <div className=" flex justify-between items-center pe-4  text-base sm:text-xl md:text-2xl lg:text-3xl text-secondary-color font-bold mt-3">
                   Messages
-                  <div className="relative">
-                    <FaCirclePlus
-                      onClick={toggleMenu}
-                      className="select-none cursor-pointer text-[#F88D58] text-4xl"
-                    />
+                  <div ref={menuRef} className="relative">
+                    <div onClick={toggleMenu}>
+                      <FaCirclePlus className="select-none cursor-pointer text-[#F88D58] text-4xl" />
+                    </div>
+
                     {open && (
-                      <div
-                        ref={menuRef}
-                        className="bg-[#F3F5FB] absolute top-9 rounded z-50 w-44 p-1"
-                      >
+                      <div className="bg-[#F3F5FB] py-3 shadow-md absolute top-9 rounded z-50 w-44 p-1">
                         <div className="flex gap-2">
                           <Image
                             alt="profileImage"
                             src={userImage}
                             className=""
                           />
-                          <p className="text-[#302F51] text-[20px] font-bold">
+                          <p
+                            onClick={toggleUserModal}
+                            className="text-[#302F51] text-[20px] cursor-pointer font-bold"
+                          >
                             Add New
                           </p>
                         </div>
@@ -543,7 +551,10 @@ const WoofMailPage = () => {
                             src={groupImage}
                             className=""
                           />
-                          <p className="text-[#302F51] text-[20px] font-bold">
+                          <p
+                            onClick={toggleGroupModal}
+                            className="text-[#302F51] cursor-pointer text-[20px] font-bold"
+                          >
                             Create Group
                           </p>
                         </div>
@@ -700,6 +711,24 @@ const WoofMailPage = () => {
               </Content>
             </Layout>
           </Layout>
+          {showAddUserModal && (
+            <div className="inset-0 fixed flex justify-center items-center bg-black/20 z-50">
+              <AddNewChat
+                toggleUserModal={toggleUserModal}
+                showAddUserModal={showAddUserModal}
+                setShowAddUserModal={setShowAddUserModal}
+              />
+            </div>
+          )}
+          {showAddGroupModal && (
+            <div className="inset-0 overflow-y-auto fixed  flex justify-center md:items-center items-start md:mt-0 mt-16 bg-black/20 z-50">
+              <CreateGroup
+                toggleGroupModal={toggleGroupModal}
+                showAddGroupModal={showAddGroupModal}
+                setShowAddGroupModal={setShowAddGroupModal}
+              />
+            </div>
+          )}
         </ConfigProvider>
       </Layout>
     </div>
