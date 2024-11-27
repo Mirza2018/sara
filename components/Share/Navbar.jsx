@@ -44,7 +44,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (open && profileRef.current && !profileRef.current.contains(event.target)) {
+      if (
+        open &&
+        profileRef.current &&
+        !profileRef.current.contains(event.target)
+      ) {
         setOpen(false);
       }
     };
@@ -54,8 +58,6 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [open]);
- 
-
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -85,11 +87,11 @@ const Navbar = () => {
           </button>
           {isOpen && (
             <div className=" pb-3 space-y-1  text-right min-w-52 shadow-2xl rounded-2xl absolute right-0  bg-white z-20">
-              <div className="relative px-2 py-1  mb-12 bg-gray-700 rounded-tl-lg rounded-tr-lg ">
+              <div className="relative px-2 py-1   bg-gray-700 rounded-tl-lg rounded-tr-lg ">
                 <button onClick={toggleMenu} className="">
                   <ImCross className="text-white" />
                 </button>
-                <IoPersonCircleOutline className="text-5xl text-right right-0 absolute  mt-1" />
+                {/* <IoPersonCircleOutline className="text-5xl text-right right-0 absolute  mt-1" /> */}
               </div>
               {menuItems.map((item) => (
                 <Link
@@ -103,6 +105,14 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
+              <div className="me-3">
+                <Link href={`/profile`}>
+                  <p className="text-black">Profile</p>
+                </Link>
+                <Link href={`/login`}>
+                  <p className="text-black">Log Out</p>
+                </Link>
+              </div>
             </div>
           )}
         </div>
@@ -135,47 +145,41 @@ const Navbar = () => {
 
         {/* Profile Icon */}
         {/* <Link href="/sign-up" className="cursor-pointer"> */}
-          <div ref={profileRef}  className="relative lg:block hidden cursor-pointer select-none">
-
-            <div  onClick={toggleProfile} >
-
-            <IoPersonCircleOutline   className="text-5xl" />
-            </div>
-            {open && (
-                      <div className="bg-[#F3F5FB] py-3 shadow-md absolute right-0 rounded z-50 w-32 p-1">
-                        <Link href="/profile">  
-                        <div className="flex gap-3">
-                          <Image
-                            alt="profileImage"
-                            src={profile}
-                            className="w-5"
-                          />
-                          <p
-                            // onClick={toggleUserModal}
-                            className="text-[#302F51] text-[20px] cursor-pointer font-bold"
-                          >
-                            Profile
-                          </p>
-                        </div>
-                      </Link>
-                        <div className="flex gap-3 mt-2 whitespace-nowrap">
-                          <Image
-                            alt="LogoutImage"
-                            src={logOut}
-                            className="w-5"
-                          />
-                          <p
-                            // onClick={toggleGroupModal}
-                            className="text-[#302F51] cursor-pointer text-[20px] font-bold"
-                          >
-                            Log Out
-                          </p>
-                        </div>
-                      </div>
-                    )}
+        <div
+          ref={profileRef}
+          className="relative lg:block hidden cursor-pointer select-none"
+        >
+          <div onClick={toggleProfile}>
+            <IoPersonCircleOutline className="text-5xl" />
           </div>
+          {open && (
+            <div className="bg-[#F3F5FB] py-3 shadow-md absolute right-0 rounded z-50 w-32 p-1">
+              <Link href="/profile">
+                <div className="flex gap-3">
+                  <Image alt="profileImage" src={profile} className="w-5" />
+                  <p
+                    // onClick={toggleUserModal}
+                    className="text-[#302F51] text-[20px] cursor-pointer font-bold"
+                  >
+                    Profile
+                  </p>
+                </div>
+              </Link>
+              <div className="flex gap-3 mt-2 whitespace-nowrap">
+                <Image alt="LogoutImage" src={logOut} className="w-5" />
+                <Link href={`/login`}>
+                  <p
+                    // onClick={toggleGroupModal}
+                    className="text-[#302F51] cursor-pointer text-[20px] font-bold"
+                  >
+                    Log Out
+                  </p>
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
         {/* </Link> */}
-        
       </div>
     </nav>
   );

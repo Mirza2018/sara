@@ -418,7 +418,7 @@ export default function EditPetProfile(props) {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors"
+            className="w-full bg-[#F88D58] text-white py-2 rounded-md  "
           >
             Continue
           </button>
