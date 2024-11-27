@@ -7,14 +7,22 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../asserts/logo.png";
 import { usePathname } from "next/navigation";
+import logOut from "./asserts/logOut.svg";
+import profile from "./asserts/profile.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
+  const profileRef = useRef(null);
   const pathName = usePathname();
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const toggleProfile = () => {
+    setOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -33,6 +41,21 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (open && profileRef.current && !profileRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
+ 
+
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -111,11 +134,48 @@ const Navbar = () => {
         </div>
 
         {/* Profile Icon */}
-        <Link href="/sign-up">
-          <div className="relative lg:block hidden cursor-pointer">
-            <IoPersonCircleOutline className="text-5xl" />
+        {/* <Link href="/sign-up" className="cursor-pointer"> */}
+          <div ref={profileRef}  className="relative lg:block hidden cursor-pointer select-none">
+
+            <div  onClick={toggleProfile} >
+
+            <IoPersonCircleOutline   className="text-5xl" />
+            </div>
+            {open && (
+                      <div className="bg-[#F3F5FB] py-3 shadow-md absolute right-0 rounded z-50 w-32 p-1">
+                        <Link href="/profile">  
+                        <div className="flex gap-3">
+                          <Image
+                            alt="profileImage"
+                            src={profile}
+                            className="w-5"
+                          />
+                          <p
+                            // onClick={toggleUserModal}
+                            className="text-[#302F51] text-[20px] cursor-pointer font-bold"
+                          >
+                            Profile
+                          </p>
+                        </div>
+                      </Link>
+                        <div className="flex gap-3 mt-2 whitespace-nowrap">
+                          <Image
+                            alt="LogoutImage"
+                            src={logOut}
+                            className="w-5"
+                          />
+                          <p
+                            // onClick={toggleGroupModal}
+                            className="text-[#302F51] cursor-pointer text-[20px] font-bold"
+                          >
+                            Log Out
+                          </p>
+                        </div>
+                      </div>
+                    )}
           </div>
-        </Link>
+        {/* </Link> */}
+        
       </div>
     </nav>
   );
