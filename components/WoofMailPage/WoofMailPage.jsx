@@ -487,7 +487,7 @@ const WoofMailPage = () => {
     <div className="">
       <Layout
         className="!bg-[#FFFAF5] "
-        style={{ height: "90vh", boxShadow: "0px 0px 2px 1px #00000040" }}
+        style={{ height: "88vh", boxShadow: "0px 0px 2px 1px #00000040" }}
       >
         <ConfigProvider
           theme={{
@@ -570,7 +570,7 @@ const WoofMailPage = () => {
                 />
               </div>
               <div className="md:h-full h-fit !overflow-y-auto">
-                <Menu mode="vertical" className=" text-gray-300  ">
+                <Menu mode="vertical" className=" text-gray-300  pb-36">
                   {filteredConversations.map((conversation) => (
                     <Menu.Item
                       key={conversation.id}

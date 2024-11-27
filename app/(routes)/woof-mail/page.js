@@ -3,7 +3,7 @@ import React from 'react';
 
 const woofMailPage = () => {
     return (
-        <div className=''>
+        <div className='overflow-y-hidden '>
             <WoofMailPage/>
         </div>
     );
