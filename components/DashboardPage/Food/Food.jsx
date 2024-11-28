@@ -25,6 +25,7 @@ const Food = () => {
             <button className="btn bg-[#F88D58] text-white">
               Edit 
             </button>
+            
           </div>
         </div>
       </div>
