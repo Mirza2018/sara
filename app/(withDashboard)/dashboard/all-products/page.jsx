@@ -1,7 +1,8 @@
+import AllProductsPage from "@/components/Dashboard/AllProducts/AllProductsPage";
 import React from "react";
 
-const AllProductsPage = () => {
-  return <div>hello jonogon</div>;
+const Page = () => {
+  return <AllProductsPage/>;
 };
 
-export default AllProductsPage;
+export default Page;
