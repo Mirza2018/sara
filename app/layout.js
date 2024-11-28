@@ -10,9 +10,7 @@ const roboto_init = Roboto({
   variable: "--font-roboto",
 });
 const inter = Inter({
-  weight: [
-    "100", "200", "300", "400", "500", "600", "700", "800", "900"
-  ],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
@@ -37,12 +35,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} overflow-x-hidden bg-[#FFFAF5]`}>
         {/* Fixed Navbar */}
-        <div className="sticky top-0  z-50 ">
-        <Navbar />
-        </div>
-          {children}
-        {/* Footer at the bottom */}
-        <Footer  />
+        {/* <div className="sticky top-0  z-50 ">
+          <Navbar />
+        </div> */}
+        {children}
       </body>
     </html>
   );

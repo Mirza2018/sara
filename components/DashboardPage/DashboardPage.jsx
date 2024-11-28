@@ -8,17 +8,14 @@ const DashboardPage = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className=" ">
+    <div className="">
       <div className="flex ">
-            <DashboardNav/>
-            <div className="flex-1">
-            <SearchField/>  
-            <Foods/>
-            </div>
+        <div className="flex-1">
+          <SearchField />
+          <Foods />
+        </div>
       </div>
-      <div>
-      
-      </div>
+      <div></div>
     </div>
   );
 };
